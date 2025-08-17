@@ -1,79 +1,137 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids Studio – Angličtina pro děti v Pardubicích</title>
+  <meta name="description" content="Učíme angličtinu děti v Pardubicích zábavnou formou – hrou, pohybem, příběhy a písničkami. Malé skupiny, pozitivní motivace a radost z učení.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  
   <style>
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
       background-color: #fffbe3;
-      color: #2db2a6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      color: #0E2F38;
       text-align: center;
+    }
+
+    /* ====== HLAVIČKA ====== */
+    header {
+      width: 100%;
+      background-color: #7DCFCB; /* světle tyrkysová z loga */
+      border-bottom: 4px solid #2FA7A2; /* tmavší pruh */
+      padding: 0.5rem 2rem;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 70px;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #0E2F38; /* tmavý text z obrysu loga */
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2FA7A2; /* tyrkysová při přejetí */
+    }
+
+    /* ====== OBSAH ====== */
+    main {
       padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    img.logo {
-      width: 150px;
-      margin-bottom: 1rem;
-    }
+
     h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #0E2F38;
     }
+
     p {
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
       font-size: 1.2rem;
+      margin-bottom: 1.5rem;
     }
-    .buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
+
     .buttons a {
-      text-decoration: none;
-      background-color: #2db2a6;
-      color: #fff;
+      display: inline-block;
+      margin: 0.5rem;
       padding: 0.8rem 1.5rem;
       border-radius: 25px;
+      text-decoration: none;
       font-weight: bold;
+      background-color: #2FA7A2;
+      color: #fff;
       transition: background-color 0.3s;
     }
+
     .buttons a:hover {
-      background-color: #23998e;
+      background-color: #0E2F38;
     }
-    .contact {
-      font-size: 1rem;
-      color: #2db2a6;
-      margin-top: 2rem;
-      line-height: 1.8;
+
+    /* ====== PATIČKA ====== */
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: #7DCFCB;
+      border-top: 4px solid #2FA7A2;
+    }
+
+    footer p {
+      margin: 0.3rem 0;
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Kids Studio logo" class="logo">
-  <h1>Angličtina, která děti baví. Čas, který má smysl.</h1>
-  <p>V Kids Studiu se děti ve věku 5 až 12 let přirozeně učí anglicky skrze hru, pohyb, tvoření a konverzaci. Učíme moderně, bez biflování – děti se s jazykem sžijí a začnou ho používat s lehkostí a radostí.</p>
-  <div class="buttons">
-    <a href="o-nas.html">O nás</a>
-    <a href="#">Jak učíme</a>
-    <a href="#">Rozvrh</a>
-    <a href="#">Přihláška</a>
-    <a href="#">Kontakt</a>
-  </div>
-  <div class="contact">
-    <p>Sukova třída, 530 02 Pardubice I<br>
-    +420 605 246 290<br>
-    <a href="mailto:info@kidsstudio-pardubice.cz">info@kidsstudio-pardubice.cz</a></p>
-  </div>
+
+  <!-- HLAVIČKA -->
+  <header>
+    <div class="header-container">
+      <img src="logo.png" alt="Kids Studio logo" class="logo">
+      <nav>
+        <a href="index.html">Domů</a>
+        <a href="o-nas.html">O nás</a>
+        <a href="jak-ucime.html">Jak učíme</a>
+        <a href="kurzy.html">Kurzy & Ceník</a>
+        <a href="prihlaska.html">Přihláška</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- OBSAH -->
+  <main>
+    <h1>Angličtina, která děti baví</h1>
+    <p>V Kids Studiu v centru Pardubic učíme děti angličtinu přirozeně – pomocí hry, pohybu, tvoření a písniček. Naše lekce jsou zábavné, interaktivní a vedené srdcem i odborností. Věříme, že radost z učení je klíčem k dlouhodobému pokroku.</p>
+
+    <div class="buttons">
+      <a href="jak-ucime.html">Jak učíme</a>
+      <a href="kurzy.html">Kurzy & Rozvrh</a>
+      <a href="prihlaska.html">Chci přihlásit dítě</a>
+    </div>
+  </main>
+
+  <!-- PATIČKA -->
+  <footer>
+    <p>Sukova třída, 530 02 Pardubice I</p>
+    <p>📞 +420 605 246 290 | ✉️ info@kidsstudio-pardubice.cz</p>
+    <p>© 2025 Kids Studio</p>
+  </footer>
+
 </body>
 </html>
