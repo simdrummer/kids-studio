@@ -85,6 +85,7 @@ nav a:hover{ background:var(--brand-2); }
   background: linear-gradient(180deg, rgba(125,207,203,.25), rgba(125,207,203,0)) ;
   padding: clamp(2rem, 6vw, 4rem) 0 2rem;
   text-align:center;
+
 }
 .hero h1{
   font-size: clamp(1.9rem, 3.5vw, 2.6rem);
