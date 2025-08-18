@@ -1,127 +1,49 @@
 <!DOCTYPE html>
 <html lang="cs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O nás – Kids Studio</title>
-    <meta
-      name="description"
-      content="Kdo stojí za Kids Studiem a proč u nás děti angličtina baví. Poznejte náš přístup."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        margin: 0;
-        font-family: "Nunito", sans-serif;
-        background-color: #fffbe3;
-        color: #2db2a6;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-      img.logo {
-        width: 150px;
-        margin-bottom: 1rem;
-      }
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-        margin-top: 2rem;
-      }
-      h3 {
-        font-size: 1.2rem;
-        margin-top: 1.5rem;
-      }
-      p {
-        max-width: 700px;
-        margin: 0 auto 1.5rem auto;
-        font-size: 1.1rem;
-      }
-      .buttons {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 2rem;
-      }
-      .buttons a {
-        text-decoration: none;
-        background-color: #2db2a6;
-        color: #fff;
-        padding: 0.8rem 1.5rem;
-        border-radius: 25px;
-        font-weight: bold;
-        transition: background-color 0.3s;
-      }
-      .buttons a:hover {
-        background-color: #23998e;
-      }
-    </style>
-  </head>
-  <body>
-    <img src="logo.png" alt="Kids Studio logo" class="logo" />
-    <h1>Proč vzniklo Kids Studio</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O nás – Kids Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <p>
-      Jmenuji se Sisi a Kids Studio je moje srdcová záležitost. Vždycky
-      mě fascinovalo, jak se děti učí – přirozeně, s radostí a bez předsudků. A
-      taky mě dlouho mrzelo, jak často je školní výuka jazyků svazuje, místo aby
-      otevírala dveře do světa.
-    </p>
+<header>
+  <div class="container header-bar">
+    <img src="logo.png" alt="Kids Studio logo" class="logo">
+    <label for="menu-toggle" class="menu-btn">Menu</label>
+    <input type="checkbox" id="menu-toggle">
+    <nav class="nav">
+      <a href="index.html">Domů</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="jak-ucime.html">Jak učíme</a>
+      <a href="kurzy.html">Kurzy & Ceník</a>
+      <a href="prihlaska.html">Přihláška</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-    <p>
-      Rozhodla jsem se to změnit. Vytvořila jsem místo, kde si děti angličtinu
-      opravdu užívají. Učíme se pohybem, hrou, tvořením a zpěvem. Každá lekce má
-      spád a smysl. Nejsme typická škola – jsme hravý prostor, kde se děti cítí dobře a
-      přirozeně si osvojují jazyk.
-    </p>
+<section class="hero subpage">
+  <div class="container">
+    <h1>O nás</h1>
+    <p class="lead">Proč vzniklo Kids Studio a kdo za ním stojí.</p>
+  </div>
+</section>
 
-    <h2>Angličtina srdcem</h2>
+<main class="container">
+  <p>Jmenuji se [Tvoje jméno] a Kids Studio je moje srdcová záležitost. Vždycky mě fascinovalo, jak se děti učí – přirozeně, s radostí a bez předsudků. A taky mě dlouho mrzelo, jak často je školní výuka jazyků svazuje, místo aby otevírala dveře do světa.</p>
+  <p>Rozhodla jsem se to změnit. Vytvořila jsem místo, kde si děti angličtinu opravdu užívají. Učíme se pohybem, hrou, tvořením a zpěvem. Každá lekce má spád a smysl. Nejsme škola – jsme hravý prostor, kde se děti cítí dobře a přirozeně si osvojují jazyk.</p>
+  <p>Kurzy aktuálně vedu osobně. Mám zkušenosti s výukou dětí, zahraničními metodami a prací s jazykem. Do budoucna chci Kids Studio rozšiřovat o další lektory, kteří sdílí stejnou vášeň – učit děti s respektem, radostí a bez tlaku.</p>
+</main>
 
-    <p>
-      V našich kurzech si zakládáme na důvěře, pohodě a osobním přístupu. Každé dítě je jiné
-      – a to je skvělé! Pracujeme v malých skupinkách, kde se nikdo neztratí a
-      každý dostane prostor zazářit.
-    </p>
+<footer>
+  <div class="container footer-inner">
+    <p class="social">Sledujte nás: <a href="#">Instagram</a> · <a href="#">Facebook</a></p>
+    <p>Sukova třída, 530 02 Pardubice I · +420 605 246 290 · info@kidsstudio-pardubice.cz</p>
+    <p>© 2025 Kids Studio</p>
+  </div>
+</footer>
 
-    <p>
-      Věřím v pochvalu, motivaci a atmosféru, kde se děti nebojí zkoušet. Neřeší
-      gramatiku ani chyby – prostě mluví. A ono to funguje.
-    </p>
-
-    <h2>Kdo děti učí?</h2>
-
-    <p>
-      Dětem se věnují zkušení lektoři. Inspirujeme se zahraničními
-      metodami a pravidelně se vzděláváme.
-    </p>
-
-    <p>
-      Do budoucna chci Kids Studio rozšiřovat o další lektory, kteří budou
-      sdílet stejnou vášeň – učit děti s respektem, radostí a bez tlaku.
-    </p>
-
-    <h2>Kde nás najdete?</h2>
-
-    <p>
-      Kids Studio sídlí v centru Pardubic – kousek od Třídy Míru. V příjemném a
-      bezpečném prostředí se tu děti mohou učit, bavit a rozvíjet.
-    </p>
-
-    <div class="buttons">
-      <a href="index.html">Zpět na hlavní stránku</a>
-      <a href="kurzy.html">Kurzy & rozvrh</a>
-      <a href="prihlaska.html">Přihlásit dítě</a>
-    </div>
-  </body>
+</body>
 </html>
