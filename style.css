@@ -31,6 +31,11 @@ header{
   background:linear-gradient(0deg, rgba(125,207,203,.0), rgba(125,207,203,.0)) , #fff;
   border-bottom:3px solid var(--brand-2);
   backdrop-filter:saturate(140%) blur(6px);
+  header {
+  background-color: #7DCFCB; /* světle tyrkysová */
+  border-bottom: 4px solid #2FA7A2; /* tmavší tyrkysová linka */
+}
+
 }
 .header-bar{
   display:flex; align-items:center; justify-content:space-between;
