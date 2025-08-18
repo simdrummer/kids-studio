@@ -37,15 +37,44 @@
 <main class="container">
   <p>Vyplňte prosím krátký formulář nebo nám napište na <a href="mailto:info@kidsstudio-pardubice.cz">info@kidsstudio-pardubice.cz</a>.</p>
 
-  <form>
-    <label>Jméno rodiče:<br><input type="text" name="rodic"></label><br><br>
-    <label>Jméno dítěte:<br><input type="text" name="dite"></label><br><br>
-    <label>Věk dítěte:<br><input type="number" name="vek"></label><br><br>
-    <label>Email:<br><input type="email" name="email"></label><br><br>
-    <label>Telefon:<br><input type="tel" name="tel"></label><br><br>
-    <label>Zpráva:<br><textarea name="zprava"></textarea></label><br><br>
-    <button type="submit">Odeslat přihlášku</button>
-  </form>
+<form action="https://formspree.io/f/xzzvqldn" method="POST">
+
+  <label>Jméno:<br>
+    <input type="text" name="dite" required>
+  </label><br><br>
+
+  <label>Věk dítěte:<br>
+    <input type="number" name="vek" min="1" max="18" required>
+  </label><br><br>
+
+  <label>E‑mail:<br>
+    <input type="email" name="email" required>
+  </label><br><br>
+
+  <label>Telefon:<br>
+    <input type="tel" name="tel">
+  </label><br><br>
+
+  <label>Zpráva pro nás:<br>
+    <textarea name="zprava" rows="4"></textarea>
+  </label><br><br>
+
+  <!-- GDPR souhlas -->
+  <label><input type="checkbox" name="souhlas" required>
+    Souhlasím se zpracováním údajů pro účely přihlášky.
+  </label><br><br>
+
+  <!-- Anti‑spam honeypot (nechte skryté) -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <!-- Předmět e‑mailu -->
+  <input type="hidden" name="_subject" value="Nová přihláška z webu Kids Studio">
+
+  <!-- Po úspěchu přesměruj na děkovací stránku -->
+  <input type="hidden" name="_redirect" value="https://kids-studio.cz/dekujeme.html">
+
+  <button type="submit">Odeslat</button>
+</form>
 </main>
 
 <footer>

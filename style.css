@@ -138,3 +138,32 @@ main{ padding-bottom: 1rem; }
   .features{ grid-template-columns:1fr; }
   .logo{ height:50px; }
 }
+
+/* Formulář */
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"],
+form textarea{
+  width: 100%;
+  max-width: 520px;
+  padding: .7rem .9rem;
+  border: 1.5px solid #e1eceb;
+  border-radius: 12px;
+  font: inherit;
+  margin-top: .35rem;
+}
+form textarea{ resize: vertical; }
+
+form button{
+  margin-top: .6rem;
+  padding: .9rem 1.3rem;
+  border-radius: 999px;
+  border: 0;
+  background: var(--brand);
+  color:#fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+form button:hover{ background: color-mix(in srgb, var(--brand) 88%, black 12%); }
