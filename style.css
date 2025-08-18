@@ -28,7 +28,7 @@ body{
 /* ====== HLAVIČKA (sticky) ====== */
 header{
   position: sticky; top:0; z-index:1000;
-  background-color:#c9dedd;
+  background:linear-gradient(0deg, rgba(125,207,203,.0), rgba(125,207,203,.0)) , #fff;
   border-bottom:4px solid #2FA7A2;
   padding:.4rem 0;           /* víc místa na výšku */
 }
