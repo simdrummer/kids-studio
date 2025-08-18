@@ -27,18 +27,30 @@ body{
 
 /* ====== HLAVIČKA (sticky) ====== */
 header{
-  position:sticky; top:0; z-index:1000;
-  background:linear-gradient(0deg, rgba(125,207,203,.0), rgba(125,207,203,.0)) , #fff;
-  backdrop-filter:saturate(140%) blur(6px);
-  background-color: #7DCFCB; /* světle tyrkysová */
-  border-bottom: 4px solid #2FA7A2; /* tmavší tyrkysová linka */
-
+  position: sticky; top:0; z-index:1000;
+  background-color:#7DCFCB;
+  border-bottom:4px solid #2FA7A2;
+  padding:.4rem 0;           /* víc místa na výšku */
 }
+
+
 .header-bar{
   display:flex; align-items:center; justify-content:space-between;
   padding:.75rem 0;
 }
-.logo{ height:56px; }
+
+/* LOGO */
+.logo{
+  height: 92px;              /* větší logo na desktopu */
+  margin: .25rem 0;
+  background:#fff;           /* bílý „badge“ pod logo */
+  border-radius: 14px;
+  padding: 8px 10px;         /* polštářek kolem loga */
+  box-shadow: 0 6px 16px rgba(14,47,56,.10);
+}
+@media (max-width: 820px){
+  .logo{ height: 72px; padding: 6px 8px; }
+}
 
 /* ====== NAVIGACE + HAMBURGER ====== */
 nav a{
