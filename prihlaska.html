@@ -27,68 +27,135 @@
   </div>
 </header>
 
-<section class="hero subpage">
-  <div class="container">
-    <h1>Přihláška</h1>
-    <p class="lead">Chcete přihlásit své dítě do kurzu? Napište nám!</p>
-  </div>
-</section>
+ <!-- HERO -->
+  <section class="hero subpage">
+    <div class="container">
+      <h1>Přihláška</h1>
+      <p class="lead">Vyplňte prosím údaje a my se vám ozveme co nejdříve.</p>
+    </div>
+  </section>
 
-<main class="container">
-  <p>Vyplňte prosím krátký formulář nebo nám napište na <a href="mailto:info@kidsstudio-pardubice.cz">info@kidsstudio-pardubice.cz</a>.</p>
+  <!-- OBSAH -->
+  <main class="container" style="max-width:720px;">
+    <form id="fs-form" action="https://formspree.io/f/xzzvqldn" method="POST" novalidate>
+      <label>Jméno dítěte<br>
+        <input type="text" name="dite" required>
+      </label><br><br>
 
-<form action="https://formspree.io/f/xzzvqldn" method="POST">
+      <label>Věk dítěte<br>
+        <input type="number" name="vek" min="1" max="18" required>
+      </label><br><br>
 
-  <label>Jméno:<br>
-    <input type="text" name="dite" required>
-  </label><br><br>
+      <label>E‑mail rodiče<br>
+        <input type="email" name="email" required>
+      </label><br><br>
 
-  <label>Věk dítěte:<br>
-    <input type="number" name="vek" min="1" max="18" required>
-  </label><br><br>
+      <label>Telefon (volitelné)<br>
+        <input type="tel" name="tel" inputmode="tel" placeholder="+420 605 123 456">
+      </label><br><br>
 
-  <label>E‑mail:<br>
-    <input type="email" name="email" required>
-  </label><br><br>
+      <label>Zpráva pro nás (volitelné)<br>
+        <textarea name="zprava" rows="4" placeholder="Např. preferovaný den/čas, zkušenosti dítěte…"></textarea>
+      </label><br><br>
 
-  <label>Telefon:<br>
-    <input type="tel" name="tel">
-  </label><br><br>
+      <!-- GDPR souhlas -->
+      <label><input type="checkbox" name="souhlas" required>
+        Souhlasím se zpracováním údajů pro účely přihlášky.
+      </label><br><br>
 
-  <label>Zpráva pro nás:<br>
-    <textarea name="zprava" rows="4"></textarea>
-  </label><br><br>
+      <!-- Anti‑spam honeypot (skryté pole) -->
+      <input type="text" name="_gotcha" style="display:none">
 
-  <!-- GDPR souhlas -->
-  <label><input type="checkbox" name="souhlas" required>
-    Souhlasím se zpracováním údajů pro účely přihlášky.
-  </label><br><br>
+      <!-- Předmět e‑mailu -->
+      <input type="hidden" name="_subject" value="Nová přihláška z webu Kids Studio">
 
-  <!-- Anti‑spam honeypot (nechte skryté) -->
-  <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" class="btn">Odeslat přihlášku</button>
 
-  <!-- Předmět e‑mailu -->
-  <input type="hidden" name="_subject" value="Nová přihláška z webu Kids Studio">
+      <!-- Stav odeslání (pro chybové hlášky) -->
+      <p id="form-status" style="margin-top:.8rem; color:#c0392b; display:none;"></p>
+    </form>
+  </main>
 
-  <!-- Po úspěchu přesměruj na děkovací stránku -->
-  <input type="hidden" name="_next" value="https://kids-studio.cz/dekujeme.html">
-  <button type="submit">Odeslat přihlášku</button>
-</form>
+  <!-- PATIČKA -->
+  <footer>
+    <div class="container footer-inner">
+      <p class="social">Sledujte nás:
+        <a href="#" target="_blank" rel="noopener">Instagram</a> ·
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+      </p>
+      <p>Sukova třída, 530 02 Pardubice I · +420 605 246 290 · info@kidsstudio-pardubice.cz</p>
+      <p>© 2025 Kids Studio</p>
+    </div>
+  </footer>
 
-  <button type="submit">Odeslat</button>
-</form>
-</main>
+  <!-- AJAX odeslání na Formspree + redirect na /dekujeme.html -->
+ <script>
+  (function () {
+    var form = document.getElementById('fs-form');
+    var statusEl = document.getElementById('form-status');
 
-<footer>
-  <div class="container footer-inner">
-    <p class="social">Sledujte nás:
-      <a href="#">Instagram</a> ·
-      <a href="#">Facebook</a>
-    </p>
-    <p>Sukova třída, 530 02 Pardubice I · +420 605 246 290 · info@kidsstudio-pardubice.cz</p>
-    <p>© 2025 Kids Studio</p>
-  </div>
-</footer>
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // HTML5 validace
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      var btn = form.querySelector('button[type="submit"]');
+      var originalText = btn ? btn.textContent : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Odesílám…';
+      }
+      if (statusEl) {
+        statusEl.style.display = 'none';
+      }
+
+      var data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (resp) {
+        if (resp.ok) {
+          window.location.href = 'https://kids-studio.cz/dekujeme.html';
+          return null;
+        }
+        return resp.json();
+      })
+      .then(function (err) {
+        if (!err) return; // už jsme přesměrovali
+        var msg = 'Odeslání se nepodařilo. Zkuste to prosím znovu.';
+        if (err && err.errors && err.errors.length && err.errors[0].message) {
+          msg = err.errors[0].message;
+        }
+        if (statusEl) {
+          statusEl.textContent = msg;
+          statusEl.style.display = 'block';
+        }
+      })
+      .catch(function () {
+        if (statusEl) {
+          statusEl.textContent = 'Chyba sítě. Zkuste to prosím znovu.';
+          statusEl.style.display = 'block';
+        }
+      })
+      .finally(function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
+
