@@ -38,7 +38,7 @@
   <!-- OBSAH -->
   <main class="container" style="max-width:720px;">
     <form id="fs-form" action="https://formspree.io/f/xzzvqldn" method="POST" novalidate>
-      <label>Jméno dítěte<br>
+      <label>Jméno<br>
         <input type="text" name="dite" required>
       </label><br><br>
 
@@ -46,16 +46,16 @@
         <input type="number" name="vek" min="1" max="18" required>
       </label><br><br>
 
-      <label>E‑mail rodiče<br>
+      <label>E‑mail<br>
         <input type="email" name="email" required>
       </label><br><br>
 
-      <label>Telefon (volitelné)<br>
-        <input type="tel" name="tel" inputmode="tel" placeholder="+420 605 123 456">
+      <label>Telefon<br>
+        <input type="tel" name="tel" inputmode="tel" required>
       </label><br><br>
 
-      <label>Zpráva pro nás (volitelné)<br>
-        <textarea name="zprava" rows="4" placeholder="Např. preferovaný den/čas, zkušenosti dítěte…"></textarea>
+      <label>Zpráva pro nás<br>
+        <textarea name="zprava" rows="4" placeholder="Např. preferovaný den/čas.."></textarea>
       </label><br><br>
 
       <!-- GDPR souhlas -->
@@ -69,7 +69,7 @@
       <!-- Předmět e‑mailu -->
       <input type="hidden" name="_subject" value="Nová přihláška z webu Kids Studio">
 
-      <button type="submit" class="btn">Odeslat přihlášku</button>
+      <button type="submit" class="btn">Odeslat</button>
 
       <!-- Stav odeslání (pro chybové hlášky) -->
       <p id="form-status" style="margin-top:.8rem; color:#c0392b; display:none;"></p>
