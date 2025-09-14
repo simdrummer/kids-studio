@@ -92,6 +92,27 @@ nav a:hover{ background:var(--brand-2); }
   color:var(--ink); opacity:.9; max-width:780px; margin:0 auto 1.2rem;
 }
 
+
+.hero-img {
+  display: block;
+  margin: 2rem auto;
+  height: auto;
+  max-width: 90%; 
+}
+
+/* pro větší obrazovky */
+@media (min-width: 768px) {
+  .hero-img {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-img {
+    max-width: 50%;
+  }
+}
+
 /* CTA tlačítka */
 .btn{
   display:inline-block; font-weight:800; text-decoration:none;
