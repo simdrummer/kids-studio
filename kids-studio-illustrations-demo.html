@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kids Studio – Ilustrace</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; margin:0; padding:24px; background:#f7fafc; color:#0f172a}
+    .grid{display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+    picture, img{display:block; width:100%; height:auto; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  </style>
+</head>
+<body>
+  <h1>Kids Studio – Ilustrační obrázky</h1>
+  <div class="grid">
+    <picture>
+      <source type="image/webp" 
+        srcset="kids-illustration-01-reading-800.webp 800w, kids-illustration-01-reading-1200.webp 1200w, kids-illustration-01-reading-1600.webp 1600w">
+      <img loading="lazy" decoding="async" alt="Učitelka čte knihu dětem sedícím v kruhu na koberci"
+        src="kids-illustration-01-reading-1200.png" width="1200" height="1200">
+    </picture>
+    <picture>
+      <source type="image/webp" 
+        srcset="kids-illustration-02-flashcards-800.webp 800w, kids-illustration-02-flashcards-1200.webp 1200w, kids-illustration-02-flashcards-1600.webp 1600w">
+      <img loading="lazy" decoding="async" alt="Děti u stolu pracují s anglickými kartičkami se slovy a obrázky"
+        src="kids-illustration-02-flashcards-1200.png" width="1200" height="1200">
+    </picture>
+    <picture>
+      <source type="image/webp" 
+        srcset="kids-illustration-03-crafts-800.webp 800w, kids-illustration-03-crafts-1200.webp 1200w, kids-illustration-03-crafts-1600.webp 1600w">
+      <img loading="lazy" decoding="async" alt="Děti kreslí, stříhají a lepí u dřevěného stolu v učebně"
+        src="kids-illustration-03-crafts-1200.png" width="1200" height="1200">
+    </picture>
+  </div>
+</body>
+</html>
